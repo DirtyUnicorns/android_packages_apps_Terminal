@@ -2,6 +2,7 @@
 package jackpal.androidterm.shortcuts;
 
 import jackpal.androidterm.R;
+import jackpal.androidterm.compat.AlertDialogCompat;
 import android.app.        AlertDialog;
 import android.content.    Context;
 import android.content.    DialogInterface;
@@ -24,9 +25,8 @@ public class      ColorValue
   private       EditText            value;
   private final int[]               color=      {0xFF, 0, 0, 0};
   private       boolean             started=    false;
-  private       AlertDialog.Builder builder;
+  private       AlertDialogCompat.Builder builder;
   private       boolean             barLock=    false;
-  private final String              Title=      "MAKE TEXT ICON";
   private final boolean[]           locks=      {false, false, false, false};
   private final int                 FP=         LinearLayout.LayoutParams.FILL_PARENT;
   private final int                 WC=         LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -46,7 +46,7 @@ public class      ColorValue
   public void colorValue()
   {
     final int     arraySizes=  4;
-    builder=      new AlertDialog.Builder(context);
+    builder=      AlertDialogCompat.newInstanceBuilder(context, AlertDialogCompat.THEME_HOLO_DARK);
     LinearLayout  lv=new LinearLayout(context);
                   lv.setOrientation(LinearLayout.VERTICAL);
     String  lab[]={
@@ -161,6 +161,7 @@ public class      ColorValue
         buttonHit(which, (color[0]<<24)|(color[1]<<16)|(color[2]<<8)|color[3]);
       }
     };
+    String Title = context.getString(R.string.addshortcut_make_text_icon);
     builder.setTitle(Title);
     builder.setPositiveButton(android.R.string.yes,    ocl);
     builder.setNegativeButton(android.R.string.cancel, ocl);

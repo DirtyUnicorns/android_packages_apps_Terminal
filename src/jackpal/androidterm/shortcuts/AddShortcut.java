@@ -1,7 +1,6 @@
 //From the desk of Frank P. Westlake; public domain.
 package jackpal.androidterm.shortcuts;
 
-import android.app.        AlertDialog;
 import android.content.    Context;
 import android.content.    DialogInterface;
 import android.content.    Intent;
@@ -21,6 +20,7 @@ import android.widget.     ScrollView;
 import android.widget.     TextView;
 import android.widget.     EditText;
 import jackpal.androidterm.R;
+import jackpal.androidterm.compat.AlertDialogCompat;
 
 import java.io.            File;
 
@@ -53,7 +53,8 @@ public class      AddShortcut
   void makeShortcut()
   {
     if(path==null) path="";
-    final AlertDialog.Builder  alert=new AlertDialog.Builder(context);
+    final AlertDialogCompat.Builder alert =
+        AlertDialogCompat.newInstanceBuilder(context, AlertDialogCompat.THEME_HOLO_DARK);
     LinearLayout   lv=new LinearLayout(context);
                    lv.setOrientation(LinearLayout.VERTICAL);
     for(int i=0, n=et.length; i<n; i++) {et[i]=new EditText(context); et[i].setSingleLine(true);}
@@ -209,7 +210,10 @@ public class      AddShortcut
     , int    shortcutColor
     )
     {
-      android.net.Uri.Builder urib=new android.net.Uri.Builder().scheme("File");
+      Uri.Builder urib=new Uri.Builder().scheme("file");
+      // Explicitly setting these unused fields to null avoids a NPE when writing to Parcel for Android SDK level 3.
+      urib.authority(null).query(null).fragment(null);
+
       if(path!=null      && !path.equals(""))      urib.path(path);
       if(arguments!=null && !arguments.equals("")) urib.fragment(arguments!=null?arguments:"");
       android.net.Uri uri=urib.build();
