@@ -60,6 +60,10 @@
    <string name="title_actionbar_preference">Barre d\'actions</string>
    <string name="summary_actionbar_preference">Choisir le comportement de la barre d\'actions (à partir d\'Android 3.0)</string>
    <string name="dialog_title_actionbar_preference">Barre d\'actions</string>
+   
+   <string name="title_orientation_preference">Orientation de l\'écran</string>
+   <string name="summary_orientation_preference">Choisir le comportement de l\'orientation de l\'écran.</string>
+   <string name="dialog_title_orientation_preference">Comportement de l\'orientation de l\'écran</string>
 
    <string name="title_cursorstyle_preference">Style du curseur</string>
    <string name="summary_cursorstyle_preference">Choisir le style du curseur</string>
@@ -159,5 +163,32 @@
   <string name="use_keyboard_shortcuts_summary_off">Raccourcis clavier désactivés.</string>
 
   <string name="help">Aide</string>
-  <!--<string name="help_url">http://jackpal.github.com/Android-Terminal-Emulator/help/index.html</string>-->
+  <string name="activity_term_here_title">Terminal ici</string>
+  <!-- BEGIN SHORTCUT RELATED STRINGS -->
+  <!-- AndroidManifest.xml -->
+  <string name="activity_shortcut_create">"Raccourci Terminal"</string>
+  <!-- FSNavigator.java -->
+  <string name="fsnavigator_title">SÉLECTEUR DE FICHIER</string>
+  <string name="fsnavigator_no_external_storage">Stockage externe non disponible</string>
+  <string name="fsnavigator_optional_enter_path">Ou saisissez le chemin ici.</string>
+  <string name="fsnavigator_change_theme">Changer de thème</string>
+  <!-- AddShortcut.java -->
+  <string name="addshortcut_command_hint">commande</string>
+  <string name="addshortcut_example_hint">--exemple=\""a\"</string>
+  <string name="addshortcut_button_find_command">Trouver une commande</string>
+  <string name="addshortcut_navigator_title">SÉLECTIONNEE LA CIBLE DU RACCOURCI</string>
+  <string name="addshortcut_command_window_instructions">La fenêtre de commande nécessite le chemin complet, sans arguments. Pour les autres commandes utiliser la fenêtre Arguments (ex\u00A0: cd /sdcard).</string>
+  <string name="addshortcut_arguments_label">Arguments\:</string>
+  <string name="addshortcut_shortcut_label">Libellé des raccourcis\:</string>
+  <string name="addshortcut_button_text_icon">Icône du texte</string>
+  <string name="addshortcut_make_text_icon">CRÉER L\'ICÔNE DU TEXTE</string>
+  <string name="addshortcut_text_icon_instructions"></string>
+  <string name="addshortcut_title">Raccourci Terminal</string>
+  <!-- ColorValue.java -->
+  <string name="colorvalue_letter_alpha">α</string>
+  <string name="colorvalue_letter_red">R</string>
+  <string name="colorvalue_letter_green">G</string>
+  <string name="colorvalue_letter_blue">B</string>
+  <string name="colorvalue_label_lock_button_column">VERROUILLÉ</string>
+  <string name="colorvalue_icon_text_entry_hint">Définir l\'icône du texte</string>
 </resources>

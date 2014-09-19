@@ -44,7 +44,7 @@
         <item>Vertical bar</item>
     </string-array>
 
-    <string-array name="entries_fontsize_preference">
+    <string-array name="entries_fontsize_preference" translatable="false">
         <item>4 x 8 pixels</item>
         <item>6 pt</item>
         <item>7 pt</item>
